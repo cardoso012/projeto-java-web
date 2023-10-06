@@ -1,5 +1,6 @@
 package com.example.primeiroprojetoweb.resources;
 
+import com.example.primeiroprojetoweb.entities.Category;
 import com.example.primeiroprojetoweb.entities.Product;
 import com.example.primeiroprojetoweb.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class ProductResource {
     public ResponseEntity<Product> findById(@PathVariable Long id)
     {
         return ResponseEntity.ok().body(repository.findById(id));
+    }
+
+    @PostMapping
+    public void create(@RequestBody Product request)
+    {
+        repository.save(request);
     }
 
 }
