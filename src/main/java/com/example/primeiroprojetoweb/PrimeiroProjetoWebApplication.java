@@ -25,13 +25,13 @@ public class PrimeiroProjetoWebApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Category category1 = new Category(1L, "eletronics");
-		Category category2 = new Category(2L, "books");
+		Category category1 = new Category(null, "eletronics");
+		Category category2 = new Category(null, "books");
 
-		Product product1 = new Product(1L, "TV", 2200.00, category1);
-		Product product2 = new Product(2L, "Domain-Driven Design", 120.00, category2);
-		Product product3 = new Product(3L, "PS5", 2800.00, category1);
-		Product product4 = new Product(4L, "Docker", 100.00, category2);
+		Product product1 = new Product(null, "TV", 2200.00, category1);
+		Product product2 = new Product(null, "Domain-Driven Design", 120.00, category2);
+		Product product3 = new Product(null, "PS5", 2800.00, category1);
+		Product product4 = new Product(null, "Docker", 100.00, category2);
 
 		category1.getProducts().addAll(Arrays.asList(product1, product3));
 		category2.getProducts().addAll(Arrays.asList(product2, product4));

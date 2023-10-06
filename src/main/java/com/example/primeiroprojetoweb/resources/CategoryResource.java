@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/categories")
@@ -25,7 +26,7 @@ public class CategoryResource {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Category> findById(@PathVariable Long id)
     {
-        return ResponseEntity.ok().body(repository.findById(id));
+        return ResponseEntity.ok().body(repository.findById(id).get());
     }
 
 }
